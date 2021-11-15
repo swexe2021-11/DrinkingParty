@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :user
+  get 'top/main'
+  post 'top/login'
+  get 'top/logout'
+  
+  get 'top2/main'
+  post 'top2/login'
+  get 'top2/logout'
+  
+  resources :room
+  root 'room#index'
 end
