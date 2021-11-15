@@ -1,8 +1,8 @@
 class CreateAdminusers < ActiveRecord::Migration[5.2]
   def change
     create_table :adminusers do |t|
-      t.string :name
-      t.integer :password
+      t.string :uid2
+      t.integer :pass2
 
       t.timestamps
     end

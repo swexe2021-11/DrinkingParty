@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
+
+  resources :user
   get 'top/main'
   post 'top/login'
   get 'top/logout'
-  resources :likes
-root 'top#index'
+  
+  get 'top2/main'
+  post 'top2/login'
+  get 'top2/logout'
+  
+  resources :room
+  root 'room#index'
 end
