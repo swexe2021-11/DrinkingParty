@@ -9,3 +9,12 @@
   <%= link_to 'ログイン', top_main_path %>
 <% end %>
 </p>
+<% @rooms.each do |r| %>
+    <p>
+        <%= r.title %>
+        <%= image_tag "/get_image/#{room.id}" %>
+    </p>
+    <% if current_user %>
+         <%= link_to '参加', chatroom_index_path %>
+    <% end %>
+<% end %>

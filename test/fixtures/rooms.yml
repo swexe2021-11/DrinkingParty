@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: 1
   room_id: 1
   user_id: 
   file: 
 
 two:
-  title: MyString
+  title: 1
   room_id: 1
   user_id: 
   file: 
