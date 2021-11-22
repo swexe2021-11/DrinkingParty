@@ -11,7 +11,7 @@ class RoomController < ApplicationController
     logger.debug "---------------"
     #ログイン中にしたツイートリンクが表示されないのでsession[:user_id]が空であることは考慮しなくてよい
     user = User.find_by(uid: current_user.uid)
-    @room = Room.new(message: params[:room][:message], user_id: user.id)
+    @room = Room.new(message: params[:room][:title], user_id: user.id)
     if @room.save
       flash[:notice] = 'チャットルームを作成しました'
       redirect_to root_path

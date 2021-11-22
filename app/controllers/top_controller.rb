@@ -1,10 +1,6 @@
 class TopController < ApplicationController
   def main
-    if session[:login_uid]
-        render 'main'
-    else
-        render 'login'
-    end
+    render 'login'
   end
 
   def login

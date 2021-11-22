@@ -1,0 +1,18 @@
+<% if @room.errors.present? %>
+<h3>エラーがあります</h3>
+<ul>
+  <% @room.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @room, url: {action: :create} do |f| %>
+  <%= f.label :title, 'title' %> 
+  <%= f.text_field :title %>
+  
+  <p><%= f.label :file, 'ファイル' %>
+     <%= f.file_field :file %></p>
+  
+  <%= f.submit '作成する' %>
+<% end %>
