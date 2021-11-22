@@ -1,0 +1,7 @@
+<%= form_for @room, url: {action: :create} do |f| %>
+  <%= f.label :title, 'タイトル' %> 
+  <%= f.text_field :title %> 
+  <%= f.label :file, '画像ファイルを挿入' %> 
+  <%= f.file_field :file %>
+  <%= f.submit '作成' %>
+<% end %>

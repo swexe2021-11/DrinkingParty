@@ -3,7 +3,7 @@ class CreateRooms < ActiveRecord::Migration[5.2]
     create_table :rooms do |t|
       t.integer :title
       t.integer :room_id
-      t.inreger :user_id
+      t.integer :user_id
       t.binary :file
 
       t.timestamps
