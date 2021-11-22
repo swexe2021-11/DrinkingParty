@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get 'top2/logout'
   
   resources :room
+  
   root 'room#index'
 end
