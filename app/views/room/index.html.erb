@@ -2,30 +2,13 @@
   <%= flash[:notice] %>
 <% end %>
 
-<% @room.each do |e| %>
-  <p>
-    <%= e.title %>
-    <% if current_user %>
-      <%= link_to '削除', tweet_path(e), method: :delete %>
-      
-    <% end %>
+
+<% @rooms.each do |r| %>
+    <p>
+        <%= r.title %>
+        <%= image_tag "/get_image/#{room.id}" %>
     </p>
+    <% if current_user %>
+         <%= link_to '参加', chatroom_index_path %>
+    <% end %>
 <% end %>
-
-<p> 
-<% if current_user %>
-  <%= link_to 'ツイートする', new_tweet_path %>
-<% end %>
-</p>
-
-<p>
-<% if current_user %>
-  <%= link_to 'ログアウト', top_logout_path %>
-<% else %>
-  <%= link_to 'ログイン', top_main_path %>
-<% end %>
-</p>
-
-<p>
-  <%= link_to 'ユーザ一覧', users_path %>
-</p>
