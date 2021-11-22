@@ -7,8 +7,11 @@
   <%= link_to 'ログアウト', top_logout_path %>
 <% else %>
   <%= link_to 'ログイン', top_main_path %>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
 <% end %>
-</p>
+
+
 <% @rooms.each do |r| %>
     <p>
         <%= r.title %>

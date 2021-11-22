@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   get 'top2/logout'
   
   resources :room
+  
   root 'room#index'
+  
+  get 'chat/:id' => 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
 end
