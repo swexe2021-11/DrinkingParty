@@ -6,7 +6,7 @@ class TopController < ApplicationController
   def login
     logger.debug "---------------"
     user = User.find_by(uid: params[:uid])
-    if user and BCrypt::Password.new(user.pass) == params[:pass]
+    if user and BCrypt::Password.new(user.pass) == params[:password]
       flash[:notice] = 'ログインできました'
       session[:login_uid] = user.uid
       redirect_to root_path
