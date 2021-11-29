@@ -25,5 +25,6 @@ class RoomController < ApplicationController
     if room.destroy
       flash[:notice] = 'チャットルームを削除しました'
     redirect_to root_path
+    end
   end
 end

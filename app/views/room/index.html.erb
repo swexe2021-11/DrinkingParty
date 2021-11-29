@@ -3,12 +3,10 @@
   <%= link_to '登録', new_user_path %>
 </p>
 <p>
-<% if current_user %>
+<% if session[:login_uid] %>
   <%= link_to 'ログアウト', top_logout_path %>
 <% else %>
   <%= link_to 'ログイン', top_main_path %>
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
 <% end %>
 
 
@@ -17,7 +15,7 @@
         <%= r.title %>
         <%= image_tag "/get_image/#{room.id}" %>
     </p>
-    <% if current_user %>
+    <% if session[:login_uid] %>
          <%= link_to '参加', chatroom_index_path %>
     <% end %>
 <% end %>
