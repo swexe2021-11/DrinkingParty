@@ -1,9 +1,4 @@
 class User < ApplicationRecord
-<<<<<<< HEAD
-    attr_accessor :password, :password_confirmation  
-    has_many :rooms
-    has_many :chats
-=======
     has_many :rooms
     has_many :chats
     
@@ -16,5 +11,4 @@ class User < ApplicationRecord
         end
         @password = val
     end
->>>>>>> b6b86766bb1bc66dce30c88ec1c61d90a9b168df
 end
