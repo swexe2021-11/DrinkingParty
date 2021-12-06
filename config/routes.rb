@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :user, only: [:index, :new, :create, :destroy]
   
-  resources :admin, only: [:index, :new, :create, :destroy]
+  resources :adminuser, only: [:index, :new, :create, :destroy]
   
   get 'top/main'
   post 'top/login'

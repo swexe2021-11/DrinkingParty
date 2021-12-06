@@ -12,7 +12,7 @@ class Top2Controller < ApplicationController
       redirect_to room_index_path
     else
       flash[:notice] = 'ログインに失敗しました'
-      render 'login'
+      render 'login2'
     end
   end
 

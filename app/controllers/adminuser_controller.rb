@@ -14,14 +14,14 @@ class AdminuserController < ApplicationController
     def create
         logger.debug "---------------"
         @user = User.new(
-        uid: params[:user][:uid],
-        password: params[:user][:password],
-        password_confirmation: params[:user][:password_confirmation])
+        uid: params[:adminuser][:uid2],
+        password: params[:adminuser][:password],
+        password_confirmation: params[:adminuser][:password_confirmation])
         if @user.valid? #validatesを実行してくれる
             flash[:notice] = 'ユーザ登録できました'
-            @user.pass = BCrypt::Password.create(params[:user][:password])
+            @user.pass = BCrypt::Password.create(params[:adminuser][:pass])
             @user.save
-            redirect_to users_path
+            redirect_to '/'
         else
             render 'new'
         end
@@ -32,10 +32,11 @@ class AdminuserController < ApplicationController
         if user.destroy
             flash[:notice] = 'ユーザを削除しました'
         end
-        redirect_to users_path
+        redirect_to admin_index_path
     end
     
     
+
     private
     def if_not_admin
         redirect_to root_path unless current_user.admin?
