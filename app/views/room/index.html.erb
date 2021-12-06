@@ -7,17 +7,16 @@
   <%= link_to '登録', new_user_path %>
 </p>
 <p>
-  <%= link_to '登録(ホストユーザ)', new_adminuser_path %>
-</p>
+    <%= link_to 'ホストとしてログイン', top2_main_path %>
+  </p>
 <p>
 <% if session[:login_uid] %>
   <p>
     <%= link_to 'ログアウト', top_logout_path %>
   </p>
   <p>
-    <%= link_to 'ログイン', top2_login_path %>
-  </p>
   <%= link_to '参加', '/' %>
+  </p>
 <% else %>
   <p>
   <%= link_to 'ログイン', top_main_path %>
