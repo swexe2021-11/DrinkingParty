@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2021_11_29_071357) do
+ActiveRecord::Schema.define(version: 2021_11_15_082208) do
 
   create_table "adminusers", force: :cascade do |t|
     t.string "uid2"
@@ -56,4 +57,5 @@ ActiveRecord::Schema.define(version: 2021_11_29_071357) do
     t.boolean "admin", default: false, null: false
   end
 
+end
 end
