@@ -8,7 +8,7 @@ class Top2Controller < ApplicationController
     login_password = BCrypt::Password.create("sanriko")
     if BCrypt::Password.new(login_password) == params[:pass2]
       flash[:notice] = 'ログインできました'
-      session[:login_uid2] = params[:uid]
+      session[:login_uid2] = params[:uid2]
       redirect_to room_index_path
     else
       flash[:notice] = 'ログインに失敗しました'
