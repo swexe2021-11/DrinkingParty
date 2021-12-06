@@ -6,7 +6,7 @@
 <% if current_user %>
   <%= link_to 'ログアウト', top_logout_path %>
 <% else %>
-  <%= link_to 'ログイン', top_main_path %>
+  <%= link_to 'ログイン', top_index_path %>
 <% end %>
 </p>
 <% @rooms.each do |r| %>
@@ -14,7 +14,8 @@
         <%= r.title %>
         <%= image_tag "/get_image/#{room.id}" %>
     </p>
-    <% if current_user %>
+    <% if session[:login_uid] %>
+    as
          <%= link_to '参加', chatroom_index_path %>
     <% end %>
 <% end %>
