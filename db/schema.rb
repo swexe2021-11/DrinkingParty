@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_082208) do
 
   create_table "users", force: :cascade do |t|
     t.string "uid"
-    t.integer "pass"
+    t.string "pass"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false, null: false
