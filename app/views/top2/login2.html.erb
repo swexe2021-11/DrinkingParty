@@ -1,4 +1,8 @@
-<%= form_tag top_login_path, method: :post do %>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<%= form_tag top2_login_path, method: :post do %>
   <%= label_tag :uid2, 'uid' %> 
   <%= text_field_tag :uid2 %> 
   <%= label_tag :pass2, 'pass' %> 
