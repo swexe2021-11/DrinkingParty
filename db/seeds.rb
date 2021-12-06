@@ -1,5 +1,5 @@
 User.create!(username:  "管理者",
-             email: "admin@ed.fuk.kindai.ac.jp",
-             password:  "sanriko",
-             password_confirmation: "sanriko",
+             uid: "admin@ed.fuk.kindai.ac.jp",
+             pass:  "sanriko",
+             password: "sanriko",
              admin: true)
