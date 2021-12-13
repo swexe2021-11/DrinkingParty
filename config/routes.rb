@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   post 'top2/login'
   get 'top2/logout'
   
+  get 'get_image/:id', to: 'rooms#get_image'
+  
   resources :room
   
   root 'room#index'
   
-  get 'chat/:id' => 'chats#show', as: 'chat'
-  resources :chats, only: [:create]
+  resources :chat, only: [:create]
 end

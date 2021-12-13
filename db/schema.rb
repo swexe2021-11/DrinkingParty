@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_071357) do
-ActiveRecord::Schema.define(version: 2021_11_15_082208) do
+ActiveRecord::Schema.define(version: 2021_12_10_071024) do
 
   create_table "adminusers", force: :cascade do |t|
     t.string "uid2"
-    t.integer "pass2"
+    t.string "pass2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_082208) do
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.integer "title"
+    t.string "title"
     t.integer "room_id"
     t.integer "user_id"
     t.binary "file"
@@ -57,5 +56,4 @@ ActiveRecord::Schema.define(version: 2021_11_15_082208) do
     t.boolean "admin", default: false, null: false
   end
 
-end
 end

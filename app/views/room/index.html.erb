@@ -3,40 +3,39 @@
 <% end %>
 
 <h1>Drinking Party</h1>
-<p>
-  <%= link_to '登録', new_user_path %>
-</p>
-<p>
-  <%= link_to '登録(ホストユーザ)', new_adminuser_path %>
-</p>
-<p>
+
+<p><%= link_to 'ユーザ登録', new_user_path %></p>
+
 <% if session[:login_uid] %>
-  <p>
     <%= link_to 'ログアウト', top_logout_path %>
-  </p>
-  <p>
-    <%= link_to 'ログアウト', top2_login_path %>
-  </p>
-  <%= link_to '参加', '/' %>
-<% else %>
-  <p>
-  <%= link_to 'ログイン', top_main_path %>
-  </p>
+  <% else if session[:login_uid2] %>
+    <p>
+      <%= link_to 'ログアウト', top2_logout_path %>
+      <%= link_to 'ルーム作成', new_room_path %>
+    </p>
+    <% else if %>
+      <%= link_to 'ログイン(ホスト)', top2_main_path %>
+      <%= link_to 'ログイン(ユーザ)', top_main_path %>
+    <% end %>
+  <% end %>
 <% end %>
-
-<% if session[:login_uid2] %>
-  <p>
-    <%= link_to 'ログアウト', top2_logout_path %>
-  </p>
-<% else %>
-  <%= link_to 'ホストでログイン', top2_main_path %>
-<% end %>
-
 
 
 <% @rooms.each do |r| %>
-    <p>
-        <%= r.title %>
-        <%= image_tag "/get_image/#{room.id}" %>
-    </p>
+  <p>
+  <%= r.title %>
+  <%= image_tag "/get_image/#{r.id}" %>
+  </p>
+    <% if session[:login_uid] %>
+      <%= link_to '参加', chat_path(@user.id)%>
+      <% else if session[:login_uid2] %>
+        <%= link_to '削除', room_path(r), method: :delete %>
+      <% end %>
+    <% end %>
 <% end %>
+
+
+
+
+
+

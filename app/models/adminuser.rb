@@ -1,4 +1,5 @@
 class Adminuser < ApplicationRecord
+    has_many :rooms
         validates :password, presence: true, confirmation: true
     attr_accessor :password, :password_confirmation
     

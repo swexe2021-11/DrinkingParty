@@ -5,14 +5,14 @@ class Top2Controller < ApplicationController
 
   def login
     logger.debug "---------------"
-    adminuser = User.find_by(uid2: params[:uid2])
-    if adminuser and BCrypt::Password.new(adminuser.pass) == params[:pass2]
+    user_pass = BCrypt::Password.create("sanriko")
+    if BCrypt::Password.new(user_pass) == params[:pass2]
       flash[:notice] = 'ログインできました'
-      session[:login_uid2] = user.uid2
+      session[:login_uid2] = params[:uid2]
       redirect_to room_index_path
     else
       flash[:notice] = 'ログインに失敗しました'
-      render 'login2'
+      render 'login'
     end
   end
 

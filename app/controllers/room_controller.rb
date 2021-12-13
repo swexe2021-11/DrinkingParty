@@ -9,9 +9,9 @@ class RoomController < ApplicationController
 
   def create
     logger.debug "---------------"
-    #ログイン中にしたツイートリンクが表示されないのでsession[:user_id]が空であることは考慮しなくてよい
-    user = User.find_by(uid: current_user.uid)
-    @room = Room.new(message: params[:room][:title], user_id: user.id)
+    @room = Room.new(
+      title: params[:room][:title],
+      file: params[:room][:file].read)
     if @room.save
       flash[:notice] = 'チャットルームを作成しました'
       redirect_to root_path
@@ -24,7 +24,13 @@ class RoomController < ApplicationController
     room = Room.find(params[:id])
     if room.destroy
       flash[:notice] = 'チャットルームを削除しました'
-    redirect_to root_path
     end
+      redirect_to root_path
   end
+  
+  def get_image
+    room = Room.find(params[:id])
+    send_data room.file
+  end
+  
 end
