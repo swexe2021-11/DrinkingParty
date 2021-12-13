@@ -9,9 +9,7 @@ class RoomController < ApplicationController
 
   def create
     logger.debug "---------------"
-    #ログイン中にしたツイートリンクが表示されないのでsession[:user_id]が空であることは考慮しなくてよい
-    user = User.find_by(uid: current_user.uid)
-    @room = Room.new(message: params[:room][:title], user_id: user.id)
+    @room = Room.new(title: params[:room][:title])
     if @room.save
       flash[:notice] = 'チャットルームを作成しました'
       redirect_to root_path

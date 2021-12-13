@@ -36,6 +36,10 @@
 <% @rooms.each do |r| %>
     <p>
         <%= r.title %>
-        <%= image_tag "/get_image/#{room.id}" %>
+        <%= image_tag "/get_image/#{@rooms.ids}" %>
+        
+        <% if session[:login_uid2] != @user %>
+          <%= link_to 'chatを始める', chat_path(@user.id)%>
+        <% end %>
     </p>
 <% end %>
