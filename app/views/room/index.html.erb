@@ -3,22 +3,17 @@
 <% end %>
 
 <h1>Drinking Party</h1>
-<<<<<<< HEAD
 
-<p><%= link_to 'ユーザ登録', new_user_path %></p>
-
-=======
 <p>
-  <%= link_to '登録', new_user_path %>
+  <%= link_to 'ユーザ登録', new_user_path %>
 </p>
-<p>
->>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea
+
 <% if session[:login_uid] %>
-    <%= link_to 'ログアウト', top_logout_path %>
-<<<<<<< HEAD
+  <%= link_to 'ログアウト(ユーザ)', top_logout_path %>
+  
   <% else if session[:login_uid2] %>
     <p>
-      <%= link_to 'ログアウト', top2_logout_path %>
+      <%= link_to 'ログアウト(ホスト)', top2_logout_path %>
       <%= link_to 'ルーム作成', new_room_path %>
     </p>
     <% else if %>
@@ -26,54 +21,19 @@
       <%= link_to 'ログイン(ユーザ)', top_main_path %>
     <% end %>
   <% end %>
-=======
-  </p>
-  <p>
-  <%= link_to '参加', '/' %>
-  </p>
-<% else %>
-  <p>
-  <%= link_to 'ユーザログイン', top_main_path %>
-  </p>
->>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea
 <% end %>
 
 
 <% @rooms.each do |r| %>
   <p>
-<<<<<<< HEAD
-  <%= r.title %>
-  <%= image_tag "/get_image/#{r.id}" %>
-=======
-    <%= link_to 'ログアウト(ホスト)', top2_logout_path %>
+    <%= r.title %>
+    <%= image_tag "/get_image/#{r.id}" %>
   </p>
-  <p>
-    <%= link_to 'ルーム作成', new_room_path %>
->>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea
-  </p>
-    <% if session[:login_uid] %>
-      <%= link_to '参加', chat_path(@user.id)%>
-      <% else if session[:login_uid2] %>
-        <%= link_to '削除', room_path(r), method: :delete %>
-      <% end %>
+  
+  <% if session[:login_uid] %>
+    <%= link_to '参加', chat_path(r.id)%>
+    <% else if session[:login_uid2] %>
+      <%= link_to '削除', room_path(r), method: :delete %>
     <% end %>
+  <% end %>
 <% end %>
-
-
-
-<<<<<<< HEAD
-
-
-
-=======
-<% @rooms.each do |r| %>
-    <p>
-        <%= r.title %>
-        <%= image_tag "/get_image/#{@rooms.ids}" %>
-        
-        <% if session[:login_uid2] != @user %>
-          <%= link_to 'chatを始める', chat_path(@user.id)%>
-        <% end %>
-    </p>
-<% end %>
->>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea

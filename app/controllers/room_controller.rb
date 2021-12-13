@@ -9,13 +9,13 @@ class RoomController < ApplicationController
 
   def create
     logger.debug "---------------"
-<<<<<<< HEAD
+
     @room = Room.new(
       title: params[:room][:title],
       file: params[:room][:file].read)
-=======
+
     @room = Room.new(title: params[:room][:title])
->>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea
+
     if @room.save
       flash[:notice] = 'チャットルームを作成しました'
       redirect_to root_path
