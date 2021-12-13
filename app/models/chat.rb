@@ -1,4 +1,4 @@
 class Chat < ApplicationRecord
-    belongs_to :users
-    belongs_to :chatrooms
+    belongs_to :user
+    belongs_to :chatroom
 end

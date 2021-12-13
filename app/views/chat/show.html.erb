@@ -3,6 +3,7 @@
     <%= f.hidden_field :room_id %>
     <%= f.submit %>
 <% end %>
+
 <table>
     <thead>
         <tr>
@@ -11,9 +12,9 @@
         </tr>
     </thead>
     <tbody>
-        <% @chats.each do |chat| %>
+        <% @chat.each do |chat| %>
             <tr>
-                <td><%= chat.user.name %></td>
+                <td><%= chat.user.uid %></td>
                 <td><%= chat.message %></td>
             </tr>
         <% end %>

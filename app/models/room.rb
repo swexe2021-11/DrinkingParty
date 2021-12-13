@@ -1,5 +1,5 @@
 class Room < ApplicationRecord
     belongs_to :user
-    belongs_to :chatrooms
+    belongs_to :chatroom
 
 end
