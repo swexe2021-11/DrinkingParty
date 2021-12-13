@@ -12,10 +12,8 @@
   <%= link_to 'ログアウト(ユーザ)', top_logout_path %>
   
   <% else if session[:login_uid2] %>
-    <p>
-      <%= link_to 'ログアウト(ホスト)', top2_logout_path %>
-      <%= link_to 'ルーム作成', new_room_path %>
-    </p>
+    <p><%= link_to 'ログアウト(ホスト)', top2_logout_path %></p>
+    <p><%= link_to 'ルーム作成', new_room_path %></p>
     <% else if %>
       <p><%= link_to 'ログイン(ホスト)', top2_main_path %></p>
       <p><%= link_to 'ログイン(ユーザ)', top_main_path %></p>
