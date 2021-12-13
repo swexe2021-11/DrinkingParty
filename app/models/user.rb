@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :chats
     
     validates :password, presence: true, confirmation: true
+    
     attr_accessor :password, :password_confirmation
     
     def password=(val)

@@ -1,11 +1,26 @@
+<% if @room.errors.present? %>
+<h3>エラーがあります</h3>
+<ul>
+  <% @room.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for @room, url: {action: :create} do |f| %>
 <p>
   <%= f.label :title, 'タイトル' %> 
   <%= f.text_field :title %> 
+<<<<<<< HEAD
 </p>
 <p>
   <%= f.label :file, '画像ファイル' %> 
   <%= f.file_field :file %>
 </p>
+=======
+  <p><%= f.label :file, '画像ファイルを挿入' %> 
+  <%= f.file_field :file %></p>
+  
+>>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea
   <%= f.submit '作成' %>
 <% end %>

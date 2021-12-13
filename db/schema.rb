@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_12_10_071024) do
+=======
+ActiveRecord::Schema.define(version: 2021_11_29_071357) do
+>>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea
 
   create_table "adminusers", force: :cascade do |t|
     t.string "uid2"
