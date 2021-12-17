@@ -14,13 +14,11 @@ Rails.application.routes.draw do
   
   get 'get_image/:id', to: 'rooms#get_image'
   
-  resources :room
+  resources :rooms
   
-  root 'room#index'
+  root 'rooms#index'
   
-<<<<<<< HEAD
-=======
-  get 'chat/:id' => 'chat#show', as: 'chat'
->>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea
-  resources :chat, only: [:create]
+ get 'chat/:id' => 'chat#show', as: 'chat'
+  resources :chats, only: [:create]
+  
 end

@@ -1,11 +1,21 @@
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
-<% end %>
-
-<%= form_tag top_login_path, method: :post do %>
-  <%= label_tag :uid, 'uid' %> 
-  <%= text_field_tag :uid %> 
-  <%= label_tag :pass, 'pass' %> 
-  <%= password_field_tag :pass %> 
-  <%= submit_tag 'ログイン' %>
-<% end %>
+<!DOCTYEP html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+  </head>
+    <body>
+      <div id = "login" >
+        <h2>ログイン画面</h2>
+        <% if flash[:notice] %>
+          <%= flash[:notice] %>
+        <% end %>
+        <%= form_tag top_login_path, method: :post do %>
+        <p>      
+          <a>ユーザID　<%= text_field_tag :uid %></a><br>
+          <a>パスワード　<%= password_field_tag :pass %></a>
+        </p>
+        <%= submit_tag 'ログイン'%>
+        <% end %>
+      </div>
+    </body>
+</html>

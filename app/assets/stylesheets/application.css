@@ -1,15 +1,132 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+h1 {
+    font-size: 5em;
+	line-height: 0.95em;
+	font-weight: bold;
+	color: #666666;
+	text-shadow: 0 0 0.2em rgba(200,200,200,1);
+	text-align: center;
+	margin: 0 0 10px 0;
+} 
+
+h2{
+	text-align: center;
+	font-size: 50px;
+	margin: 30px 0 40px 0;
+	color:#888888;
+}
+
+h3{
+    width:750px;
+    text-align: center;
+    font-family: serif;
+    font-size: 40px;
+    background: #BAD3FF;
+    border-top: solid 5px #C2EEFF;
+    border-bottom: solid 5px #C2EEFF;
+    position:relative;
+    left:50px;
+}
+
+header{
+	background-color: black;
+	padding:10px 0 50px 0;
+}
+
+header .link {
+  text-decoration: none;
+  color:white;
+}
+
+header nav li{
+    display: inline;
+}
+
+header nav li{
+    text-decoration: none;
+    font-size: 20px;
+    color: #E6E6FA;
+    float: right;
+    padding: 0 20px;
+}
+    
+header nav li:hover {
+    border-bottom: 2px solid #FF7A37;
+    opacity: 0.8;
+}
+
+#login{
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 20px 50px 20px;
+    margin: 30px;
+    color: black;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+#login ul li{
+    display: inline;
+    font-size: 25px;
+    color:black;
+    padding: 50px 0;
+}
+
+#login .link3{
+    text-decoration: none;
+    color:red;
+}
+
+#login .link3:hover{
+    color:black;
+    border-bottom:2px solid red; 
+}
+
+.image_size{
+    width: 300px;
+    max-height: 300px;
+    border-radius: 5%;
+}
+
+#roompage{
+    width: 690px;
+    color: #474747;
+    background: #F8F8FF;
+    padding: 30px;
+    position:relative;
+    bottom: 40px;
+    left:50px;
+    font-size: 20px;
+    overflow-wrap: break-word;
+}
+
+#user{
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 20px 50px 20px;
+    margin: 30px;
+    color: black;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+#user .link2{
+    text-decoration: none;
+    color:#888888;
+}
+
+#user .link2:hover{
+    border-bottom:2px solid #FF7A37;
+}
+
+#roompage .link3{
+    text-decoration: none;
+    color:black;
+    border:solid 2px;
+    position:relative;
+    left:500px;
+}
+
+#roompage .link3:hover{
+    color:white;
+    background-color: black;
+}

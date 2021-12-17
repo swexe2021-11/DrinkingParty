@@ -10,6 +10,25 @@
   </head>
 
   <body>
+    <h1>Drinking Party</h1>
+    <header>
+          <nav>
+            <ul>
+              <li><%= link_to 'ユーザ登録', new_user_path , class:"link" %></li>
+              <% if session[:login_uid] %>
+                  <li><%= link_to 'ログアウト', top_logout_path , class:"link" %></li>
+                <% else if session[:login_uid2] %>
+                  <li><%= link_to 'ログアウト', top2_logout_path , class:"link" %></li>
+                  <li><%= link_to 'ルーム作成', new_room_path , class:"link" %></li>
+                <% else if %>
+                  <li><%= link_to 'ホストでログイン', top2_main_path , class:"link" %></li>
+                  <li><%= link_to 'ユーザでログイン', top_main_path , class:"link" %></li>
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+        </nav>
+      </header>
     <%= yield %>
   </body>
 </html>

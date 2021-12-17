@@ -9,7 +9,7 @@ class TopController < ApplicationController
     if user and BCrypt::Password.new(user.pass) == params[:password]
       flash[:notice] = 'ログインできました'
       session[:login_uid] = user.uid
-      redirect_to room_index_path
+      redirect_to rooms_path
     else
       flash[:notice] = 'ログインに失敗しました'
       render 'login'

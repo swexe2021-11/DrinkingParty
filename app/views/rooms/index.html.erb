@@ -1,0 +1,24 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<% if session[:login_uid2] %>
+    <h3>作成済みルーム一覧</h3>
+    <% else if %>
+        <h3>ルーム一覧</h3>
+    <% end %>
+<% end %>
+<div id = "roompage">
+    <% @rooms.each do |r| %>
+        <p>
+            <%= r.title %><br>
+            <%= image_tag "/get_image/#{r.id}",class: "image_size" %>
+        </p>  
+      <% if session[:login_uid] %>
+        <%= link_to '参加', chat_path(r.id),class:"link3"%>
+        <% else if session[:login_uid2] %>
+          <%= link_to '削除', room_path(r), method: :delete, class:"link3" %>
+        <% end %>
+      <% end %>
+    <% end %>
+</div>

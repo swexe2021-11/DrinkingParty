@@ -1,23 +1,26 @@
-<% if @user.errors.present? %>
-<h3>エラーがあります</h3>
-<ul>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
-
-<%= form_for @user, url: {action: :create} do |f| %>
-<p>
-  <%= f.label :uid, 'uid' %> 
-  <%= f.text_field :uid %> 
-</p>
-  <%= f.label :password, 'pass' %> 
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation, 'password(確認)' %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit '登録' %>
-<% end %>
-<p>
-  <%= link_to 'ユーザ一覧', user_index_path %>
-</p>
+<!DOCTYEP html>
+<html>
+  <head>
+      <meta charset="utf-8"/>
+  </head>
+    <body>
+      <div id = "user">
+        <% if @user.errors.present? %>
+        <h3>エラーがあります</h3>
+          <% @user.errors.full_messages.each do |msg| %>
+            <%= msg %>
+          <% end %>
+        <% end %>
+        <h2>新規登録</h2>
+        <%= form_for @user, url: {action: :create} do |f| %>
+          <p>
+            <a>ユーザID　<%= f.text_field :uid %></a><br>
+            <a>パスワード　<%= f.password_field :password %></a><br>
+            <a>パスワード(再入力)　<%= f.password_field :password_confirmation %></a>
+          </p>
+          <%= f.submit '登録' %>
+        <% end %>
+        <p><%= link_to 'ユーザ一覧', user_index_path,class: "link2" %></p>
+      </div>
+    </body>
+</html>
