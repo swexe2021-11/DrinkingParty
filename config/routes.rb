@@ -17,15 +17,8 @@ Rails.application.routes.draw do
   resources :rooms
   
   root 'rooms#index'
-  
- get 'chat/:id' => 'chat#show', as: 'chat'
-  resources :chats, only: [:create]
-  
-<<<<<<< HEAD
-=======
 
   get 'chat/:id' => 'chats#show', as: 'chat'
 
   resources :chats, only: [:create]
->>>>>>> eb72fe10e0e1efbe8d80d601dde3cde3cabf7368
 end

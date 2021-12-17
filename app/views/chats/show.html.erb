@@ -44,15 +44,38 @@
             </table>
 
             <%= form_with model: @chat, remote: true do |f| %>
-              <%= f.text_field :message %>
-              <%= f.hidden_field :room_id %>
-              <%= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
+              <form>
+              </form>
+
+              <head>
+              <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                  <title></title>
+              
+                <script type="text/javascript" language="javascript">
+                  function onButtonClick() {
+                    target = document.getElementById("output");
+                    target.innerText = document.forms.id_form1.id_textBox1.value;
+                    //target.innerText = document.id_form1.id_textBox1.value;//これでもOK
+                  }
+                </script>
+                
+              </head>
+              <body>
+                <form name="form1" id="id_form1" action="">
+                  <input name="textBox1" id="id_textBox1" type="text" value="" />
+                  <input type="button" value="SEND" onclick="onButtonClick();" />
+                </form>
+                <hr/>
+                <div id="output"></div>
+              </body>
             <% end %>
         </div>
     </div>
 </div>
 
 
+<br>
+<br>
 <!-- current_userと@userが一致していない場合に`Begin Chat`を表示 -->
 
 <% if current_user != @user %>

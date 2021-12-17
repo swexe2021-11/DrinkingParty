@@ -1,5 +1,4 @@
 class RoomsController < ApplicationController
-
   def index
     @rooms = Room.all
   end
@@ -10,11 +9,6 @@ class RoomsController < ApplicationController
 
   def create
     logger.debug "---------------"
-<<<<<<< HEAD:app/controllers/rooms_controller.rb
-    @room = Room.new(
-      title: params[:room][:title],
-      file: params[:room][:file].read)
-=======
 
     @room = Room.new(
       title: params[:room][:title],
@@ -22,7 +16,6 @@ class RoomsController < ApplicationController
 
     @room = Room.new(title: params[:room][:title])
 
->>>>>>> eb72fe10e0e1efbe8d80d601dde3cde3cabf7368:app/controllers/room_controller.rb
     if @room.save
       flash[:notice] = 'チャットルームを作成しました'
       redirect_to root_path

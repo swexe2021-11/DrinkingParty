@@ -6,6 +6,7 @@
   <% end %>
 </ul>
 <% end %>
+
 <%= form_for @room, url: {action: :create} do |f| %>
 <p>
   <%= f.label :title, 'タイトル' %> 
@@ -17,8 +18,5 @@
 </p>
 
 <%= f.submit '作成' %>
-<<<<<<< HEAD:app/views/rooms/new.html.erb
-=======
 
->>>>>>> eb72fe10e0e1efbe8d80d601dde3cde3cabf7368:app/views/room/new.html.erb
 <% end %>
