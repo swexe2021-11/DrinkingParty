@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     
-    has_many :rooms, dependent: :destroy
+    has_many :user_rooms, dependent: :destroy
     has_many :chats, dependent: :destroy
     
     validates :password, presence: true, confirmation: true
