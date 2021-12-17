@@ -3,6 +3,12 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :uid
       t.string :pass
+      t.integer :room_id
+      t.integer :user_id
+      t.integer :chatroom_id
+      t.string  :rooms
+      t.datetime "created_at", null: false
+      t.datetime "updated_at", null: false
 
       t.timestamps
     end

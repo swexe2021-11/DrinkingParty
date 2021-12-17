@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_12_10_071024) do
-=======
-ActiveRecord::Schema.define(version: 2021_11_29_071357) do
->>>>>>> 668d7c2e4fb52450c0e1bbba718f17307f3029ea
+ActiveRecord::Schema.define(version: 2021_12_16_181845) do
 
   create_table "adminusers", force: :cascade do |t|
     t.string "uid2"
@@ -24,13 +20,19 @@ ActiveRecord::Schema.define(version: 2021_11_29_071357) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
+    t.integer "room_id"
+    t.integer "user_id"
+    t.integer "chatroom_id"
+    t.string "rooms"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "chats", force: :cascade do |t|
-    t.integer "user_id"
     t.integer "room_id"
+    t.integer "user_id"
+    t.integer "chatroom_id"
+    t.string "rooms"
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,6 +50,15 @@ ActiveRecord::Schema.define(version: 2021_11_29_071357) do
     t.integer "room_id"
     t.integer "user_id"
     t.binary "file"
+    t.integer "chatroom_id"
+    t.string "rooms"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_rooms", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +66,10 @@ ActiveRecord::Schema.define(version: 2021_11_29_071357) do
   create_table "users", force: :cascade do |t|
     t.string "uid"
     t.string "pass"
+    t.integer "room_id"
+    t.integer "user_id"
+    t.integer "chatroom_id"
+    t.string "rooms"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false, null: false
