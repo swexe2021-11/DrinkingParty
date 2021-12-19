@@ -2,11 +2,12 @@ class ApplicationController < ActionController::Base
     private
     def current_user
         if session[:login_uid2]
-        User.find_by(uid: session[:login_uid2])
+            User.find_by(uid: session[:login_uid2])
         end
     end
     helper_method :current_user
 
+<<<<<<< HEAD
         def current_user
             if session[:login_uid]
                 User.find_by(uid: session[:login_uid])
@@ -25,4 +26,12 @@ class ApplicationController < ActionController::Base
             room
     end
     helper_method :current_room
+=======
+    def current_user
+        if session[:login_uid]
+            User.find_by(uid: session[:login_uid])
+        end
+    end
+    helper_method :current_user
+>>>>>>> c406ff981eaa3a523e0d4f1cb8311c8a8b7c94b3
 end

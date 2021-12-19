@@ -13,4 +13,17 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+<<<<<<< HEAD
 
+=======
+//= require_tree .
+/* global $ */
+
+
+
+/*.messageを部分更新。appendメソッドで要素を追加 */
+$('.message').append("<p style='text-align: left;'><%= @chat.message %></p>");
+
+/*チャット投稿後、フォームの値に前回の投稿内容が残らないようにする */
+$('input[type=text]').val("");
+>>>>>>> c406ff981eaa3a523e0d4f1cb8311c8a8b7c94b3
