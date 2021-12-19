@@ -1,0 +1,11 @@
+<h4>チャットルーム</h4>
+
+<div class = "contents" >
+    <ul class="messages">
+        <%= render @chats %>
+    </ul>
+        <%= form_with(model: @chat, class: 'js-form') do |f| %>
+        <%= f.text_field :message %>
+        <%= f.submit "送信",class: "button" %>
+    <% end %>
+</div>

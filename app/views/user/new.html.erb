@@ -8,7 +8,7 @@
         <% if @user.errors.present? %>
         <h3>エラーがあります</h3>
           <% @user.errors.full_messages.each do |msg| %>
-            <%= msg %>
+            <%= msg %><br>
           <% end %>
         <% end %>
         <h2>新規登録</h2>
@@ -16,9 +16,10 @@
           <p>
             <a>ユーザID　<%= f.text_field :uid %></a><br>
             <a>パスワード　<%= f.password_field :password %></a><br>
-            <a>パスワード(再入力)　<%= f.password_field :password_confirmation %></a>
+            <a>パスワード(再入力)　<%= f.password_field :password_confirmation %></a><br>
+            ※パスワードは４文字以上８文字以内
           </p>
-          <%= f.submit '登録' %>
+          <%= f.submit '登録' ,class: "button2"%>
         <% end %>
         <p><%= link_to 'ユーザ一覧', user_index_path,class: "link2" %></p>
       </div>

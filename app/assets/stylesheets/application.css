@@ -27,6 +27,22 @@ h3{
     left:50px;
 }
 
+h4{
+    text-align: center;
+    color: #fff;
+    text-shadow: 
+    3px 3px 3px #4689FF, 
+    -1px 1px 1px #4689FF, 
+    -1px 1px #4689FF, 
+    -1px -1px 1px #E9FFA5, 
+    1px 1px 1px #E9FFA5, 
+    -1px 1px 1px #E9FFA5, 
+    1px -1px 1px #E9FFA5, 
+    -1px -1px 1px #E9FFA5;
+    font-size: 55px;
+    margin:50px 0 10px 0;
+}
+
 header{
 	background-color: black;
 	padding:10px 0 50px 0;
@@ -53,6 +69,8 @@ header nav li:hover {
     border-bottom: 2px solid #FF7A37;
     opacity: 0.8;
 }
+
+
 
 #login{
     font-size: 25px;
@@ -81,6 +99,12 @@ header nav li:hover {
     border-bottom:2px solid red; 
 }
 
+#loginname {
+    text-align: right;
+    list-style: none;
+    color: #660000;
+}
+
 .image_size{
     width: 300px;
     max-height: 300px;
@@ -97,6 +121,17 @@ header nav li:hover {
     left:50px;
     font-size: 20px;
     overflow-wrap: break-word;
+}
+
+#roompage a{
+    float: right;
+    font-size:16px;
+    color:#999999;
+    border-bottom:solid 2px;
+}
+
+#roomcontents {
+    border-bottom:solid 5px;
 }
 
 #user{
@@ -123,10 +158,148 @@ header nav li:hover {
     color:black;
     border:solid 2px;
     position:relative;
-    left:500px;
+    font-size:15px;
+    padding:8px 20px;
 }
 
 #roompage .link3:hover{
     color:white;
     background-color: black;
+    position:relative;
+    bottom:5px;
+}
+
+#roompage .link4{
+    text-decoration: none;
+    color:red;
+    border:solid 2px;
+    position:relative;
+    font-size:15px;
+    padding:8px 20px;
+    margin:0 10px 0 0;
+}
+
+#roompage .link4:hover{
+    color:#FFA500;
+    background-color: #FF3366;
+    position:relative;
+    bottom:5px;
+}
+
+#roomnew input[type="text"]{
+    width:400px;
+    height:50px;
+    font-size: 20px;
+}
+
+input[type="text"] {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+}
+
+input[type="password"] {
+    width: 150px;
+    height: 30px;
+    font-size: 25px;
+}
+
+input[type="file"]{
+    font-size:20px;
+}
+
+#login input[type="submit"]{
+    font-size:20px;
+    background-color: white;
+    color:black;
+}
+
+#login input[type="submit"]:hover{
+    background-color: black;
+    color:white;
+    position: relative;
+    bottom:5px;
+}
+.contents {
+    list-style: none;
+    text-align: center;
+    margin:0 0 30px 0;
+}
+
+.messages{
+    list-style: none;
+    padding:10px 10px;
+}
+
+.messages ul li{
+    padding: 5px;
+}
+
+.messages a{
+    margin:0 10px 0 0;
+    color: #660000;
+    font-family: serif;
+}
+
+.messages span{
+    color:purple;
+    position:relative;
+    top:80%;
+    opacity:0.3;
+}
+
+.bubble {
+     position: relative;
+     display: inline-block;
+     width: 300px;
+     text-align: center;
+     color:black;
+     padding: 20px;
+     margin:10px 0;
+     background-color: #E6E6FA;
+     border-radius: 5px;
+     overflow-wrap: break-word;
+     font-family: serif;
+}
+.bubble:before {
+     content: '';
+     position: absolute;
+     display: block;
+     z-index: 1;
+     border-style: solid;
+     border-color: transparent #E6E6FA;
+     border-width: 10px 10px 10px 0;
+     top: 80%;
+     left: -8px;
+     margin-top: -10px;
+}
+
+.button{
+    display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: black;
+  color: white;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  opacity: 0.8;
+}
+.button:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+.button2{
+    color: black; 
+    background-color: white;
+    padding:5px 10px;
+}
+
+.button2:hover{
+    color: white;
+    background-color: black;
+    position: relative;
+    bottom:3px;
+
 }

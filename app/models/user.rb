@@ -1,9 +1,13 @@
 class User < ApplicationRecord
-    
-    has_many :user_rooms, dependent: :destroy
-    has_many :chats, dependent: :destroy
-    
-    validates :password, presence: true, confirmation: true
+    validates :uid, presence: true, uniqueness: true
+    validates :password, presence: true, confirmation: true,length: {minimum:4, maximum: 8}
+
+    has_many :chatroom_to_users
+    has_many :chatrooms, through: :chatroom_to_users
+    has_many :chats
+    has_many :rooms
+    has_many :user_rooms
+
     
     attr_accessor :password, :password_confirmation
     
@@ -13,4 +17,5 @@ class User < ApplicationRecord
         end
         @password = val
     end
+    
 end

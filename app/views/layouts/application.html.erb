@@ -11,6 +11,14 @@
 
   <body>
     <h1>Drinking Party</h1>
+    <div id = "loginname" >
+      <% if session[:login_uid] %>
+        <li>ログイン中<%= session[:login_uid] %>さん</li>
+        <% else if session[:login_uid2] %>
+          <li>ホスト<%= session[:login_uid2] %>でログイン中</li>
+        <% end %>
+      <% end %>
+    </div>
     <header>
           <nav>
             <ul>

@@ -5,19 +5,21 @@
 <% if session[:login_uid2] %>
     <h3>作成済みルーム一覧</h3>
     <% else if %>
-        <h3>ルーム一覧</h3>
+        <h3>チャットルーム一覧</h3>
     <% end %>
 <% end %>
 <div id = "roompage">
     <% @rooms.each do |r| %>
+        <p><a>作成日時:<%= r.created_at.strftime("%D:%H:%M") %></a><br></p>
         <p>
             <%= r.title %><br>
             <%= image_tag "/get_image/#{r.id}",class: "image_size" %>
         </p>  
       <% if session[:login_uid] %>
-        <%= link_to '参加', chat_path(r.id),class:"link3"%>
+        <%= link_to '参加', chats_path(r.id),class: "link3"%><br>
         <% else if session[:login_uid2] %>
-          <%= link_to '削除', room_path(r), method: :delete, class:"link3" %>
+            <%= link_to '編集', "/rooms/#{r.id}/edit", class: "link3" %>
+            <%= link_to '削除', room_path(r), method: :delete, class: "link4" %><br>
         <% end %>
       <% end %>
     <% end %>

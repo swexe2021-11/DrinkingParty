@@ -1,0 +1,8 @@
+<%= javascript_include_tag "create.js" %>
+<li class="message">
+    <a><%= current_user.uid %></a>
+    <div class = "bubble">
+        <%= chat.message %>
+    </div>
+    <span><%= chat.created_at.strftime("%D:%H:%M") %></span>
+</li>

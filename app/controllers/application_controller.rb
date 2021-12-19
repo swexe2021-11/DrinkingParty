@@ -1,23 +1,28 @@
 class ApplicationController < ActionController::Base
     private
-<<<<<<< HEAD
     def current_user
         if session[:login_uid2]
         User.find_by(uid: session[:login_uid2])
         end
     end
     helper_method :current_user
-=======
->>>>>>> eb72fe10e0e1efbe8d80d601dde3cde3cabf7368
+
         def current_user
             if session[:login_uid]
                 User.find_by(uid: session[:login_uid])
             end
         end
-<<<<<<< HEAD
     helper_method :current_user
     
-=======
-        helper_method :current_user
->>>>>>> eb72fe10e0e1efbe8d80d601dde3cde3cabf7368
+    private
+    def current_room
+        if session[:room_id]
+            room = Room.find(session[:room_id])
+        else
+            room = Room.create
+            session[:room_id] = room.id
+        end
+            room
+    end
+    helper_method :current_room
 end

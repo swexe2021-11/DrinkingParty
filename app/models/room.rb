@@ -1,8 +1,5 @@
 class Room < ApplicationRecord
-<<<<<<< HEAD
-
-
-=======
-    
->>>>>>> eb72fe10e0e1efbe8d80d601dde3cde3cabf7368
+    has_many :users, through: :user_rooms
+    has_many :user_rooms, dependent: :destroy
+    validates :title, presence: true
 end

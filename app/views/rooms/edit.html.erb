@@ -1,0 +1,18 @@
+<!DOCTYEP html>
+<html>
+  <head>
+      <meta charset="utf-8"/>
+  </head>
+    <body>
+        <div id = "user">
+            <h2>ルーム編集</h2>
+            <%= form_for @room, url: {action: :update} do |f| %>
+                <p>
+                    <a>タイトル<%= f.text_field :title %></a><br>
+                    <br><a>画像ファイル<%= f.file_field :file %></a>
+                </p>
+                <%= f.submit '更新',class:"button2" %>
+            <% end %>
+        </div>
+    </body>
+</html>

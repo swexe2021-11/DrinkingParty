@@ -1,24 +1,24 @@
-<% if @room.errors.present? %>
-<h3>エラーがあります</h3>
-<ul>
-  <% @room.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
-<%= form_for @room, url: {action: :create} do |f| %>
-<p>
-  <%= f.label :title, 'タイトル' %> 
-  <%= f.text_field :title %> 
-</p>
-
-<p><%= f.label :file, '画像ファイルを挿入' %> 
-  <%= f.file_field :file %>
-</p>
-
-<%= f.submit '作成' %>
-<<<<<<< HEAD:app/views/rooms/new.html.erb
-=======
-
->>>>>>> eb72fe10e0e1efbe8d80d601dde3cde3cabf7368:app/views/room/new.html.erb
-<% end %>
+<!DOCTYEP html>
+<html>
+  <head>
+      <meta charset="utf-8"/>
+  </head>
+    <body>
+      <div id = "user">
+        <% if @room.errors.present? %>
+        <h3>エラーがあります</h3>
+          <% @room.errors.full_messages.each do |msg| %>
+            <%= msg %><br>
+          <% end %>
+        <% end %>
+        <h2>ルーム作成</h2>
+          <%= form_for @room, url: {action: :create} do |f| %>
+          <p>
+            <a>タイトル <%= f.text_field :title %></a><br>
+            <br><a>画像ファイル <%= f.file_field :file %></a>
+          </p>
+        <%= f.submit '作成' ,class: "button2"%>
+        <% end %>
+      </div>
+    </body>
+</html>
