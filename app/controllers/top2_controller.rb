@@ -5,10 +5,6 @@ class Top2Controller < ApplicationController
 
   def login
     logger.debug "---------------"
-<<<<<<< HEAD
-=======
-
->>>>>>> c406ff981eaa3a523e0d4f1cb8311c8a8b7c94b3
     login_password = BCrypt::Password.create("sanriko")
     if BCrypt::Password.new(login_password) == params[:pass2]
       flash[:notice] = 'ログインできました'
